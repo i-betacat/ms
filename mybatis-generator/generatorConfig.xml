@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+
+	<!-- 数据库的JDBC驱动的jar包地址 -->
+	<!-- <classPathEntry location="E:\lib\mysql\mysql-connector-java-5.1.43.jar" /> -->
+
+	<context id="context1" targetRuntime="MyBatis3">
+	
+		<commentGenerator>
+			<!-- 是否去除自动生成的注释 true：是 ，false:否 -->
+			<property name="suppressAllComments" value="true" />
+		</commentGenerator>
+
+		<!-- 数据库链接URL、用户名、密码 -->
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://192.168.31.101:3306/ms?ssl=true" 
+			userId="ms"
+			password="mysqlms123" />
+
+		<!-- 生成模型的包名和位置 -->
+		<javaModelGenerator targetPackage="com.ms.user.entity"
+			targetProject=".\src" />
+
+		<!-- 生成的XML映射文件包名和位置 -->
+		<sqlMapGenerator targetPackage="com.ms.user.mapper"
+			targetProject=".\src" />
+
+		<!-- 生成DAO的包名和位置 -->
+		<javaClientGenerator targetPackage="com.ms.user.dao"
+			targetProject=".\src" type="XMLMAPPER" />
+
+		<!-- 要生成的那些表 -->
+		<table schema="ms" tableName="user" domainObjectName="user" 
+			enableSelectByPrimaryKey="true"
+			enableSelectByExample="true" 	
+			enableUpdateByPrimaryKey="true"
+			enableUpdateByExample="true"
+			enableDeleteByPrimaryKey="true"
+			enableDeleteByExample="true"
+			enableCountByExample="true" >
+
+			<!--domain字段的命名规则，false:默认为驼峰命名 true:按数据库真实命名 -->
+			<property name="useActualColumnNames" value="false" />
+
+			<!-- <columnOverride column="FILMID" property="FILMID" /> -->
+
+		</table>
+	</context>
+</generatorConfiguration>
