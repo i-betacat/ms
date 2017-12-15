@@ -6,10 +6,12 @@ target/
 release.properties
 
 # Eclipse
+RemoteSystemsTempFiles
 .classpath
 .project
 .externalToolBuilders/
 .metadata
+.recommenders
 .settings
 
 # IntelliJ
