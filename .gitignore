@@ -6,13 +6,13 @@ target/
 release.properties
 
 # Eclipse
-RemoteSystemsTempFiles
 .classpath
 .project
 .externalToolBuilders/
-.metadata
-.recommenders
-.settings
+.metadata/
+.recommenders/
+.settings/
+RemoteSystemsTempFiles/
 
 # IntelliJ
 *.iml
